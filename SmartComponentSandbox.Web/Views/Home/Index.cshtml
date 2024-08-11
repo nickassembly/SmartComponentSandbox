@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <fieldset>
+            <legend>Add Customer</legend>
+            <div>
+                <label for="FirstName">First Name:</label>
+                <input type="text" name="FirstName" value="" />
+            </div>
+            <div>
+                <label for="LastName">Last Name:</label>
+                <input type="text" name="LastName" value="" />
+            </div>
+            <div>
+                <label for="PhoneNumber">Phone:</label>
+                <input type="text" name="PhoneNumber" value="" />
+            </div>
+
+            <div>
+                <button class="default-button" type="submit">Submit</button>
+                <!--TODO Can add smart combobox by wiring up api url-->
+                <!--https://github.com/dotnet-smartcomponents/smartcomponents/blob/main/docs/smart-combobox.md-->
+                <smart-combobox url="~/api/some-categories-endpoint" />
+
+                <!--Need to set up backend should allow paste from email/teams/etc and autofill name, address and so on...-->
+                @* <smart-paste-button default-icon class="default-button alert-secondary" /> *@
+            </div>
+        </fieldset>
+    </form>
+</div>
